@@ -42,6 +42,50 @@ get_header(); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'frg_red' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+
+
+
+<?php if(is_page('contact-page')):?>
+						<div id="view1">
+							<?php
+							$location = get_field('google_map');
+							if( ! empty($location) ):
+								?>
+								<div id="map" style="width: 100%; height: 350px;"></div>
+								<script src='http://maps.googleapis.com/maps/api/js?sensor=false' type='text/javascript'></script>
+
+								<script type="text/javascript">
+									//<![CDATA[
+									function load() {
+										var lat = <?php echo $location['lat']; ?>;
+										var lng = <?php echo $location['lng']; ?>;
+// coordinates to latLng
+										var latlng = new google.maps.LatLng(lat, lng);
+// map Options
+										var myOptions = {
+											zoom: 9,
+											center: latlng,
+											mapTypeId: google.maps.MapTypeId.ROADMAP
+										};
+//draw a map
+										var map = new google.maps.Map(document.getElementById("map"), myOptions);
+										var marker = new google.maps.Marker({
+											position: map.getCenter(),
+											map: map
+										});z
+									}
+									// call the function
+									load();
+									//]]>
+								</script>
+							<?php endif; ?>
+						</div>
+	<?php render_contact_info();?>
+
+<?php endif;?>
+
+
+
 					</div><!-- .entry-content -->
 
 					<footer class="entry-meta">

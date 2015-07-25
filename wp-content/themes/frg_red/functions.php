@@ -574,14 +574,74 @@ add_action( 'widgets_init', 'menus_slider_widget_init' );
 
 add_action( 'init', 'create_post_type_contact_info' );
 function create_post_type_contact_info() {
-	register_post_type( 'contact_info',
+	register_post_type( 'header_info',
 		array(
 			'labels' => array(
-				'name' => __( 'Сontact and header info' ),
-				'singular_name' => __( 'contact_info' )
+				'name' => __( 'Header info' ),
+				'singular_name' => __( 'header_info' )
 			),
 			'public' => true,
 			'has_archive' => true,
 		)
 	);
+}
+
+function get_header_info($param){
+$args = array(
+	'post_title'	   => 'Header info',
+	'category'         => '',
+	'category_name'    => '',
+	'post_type'        => 'header_info',
+
+);
+$header_info = get_posts($args);
+	$header_info_fields = get_fields($header_info[0]->ID);
+	if($param){
+		$contact_info_fields = get_contact_page_info();
+		echo'<div class="contact-header-info">
+		<img src="'.$header_info_fields['site_logo']['url'].'"
+		<p class="company-name">'.$header_info_fields['company_name'].'</p>
+		<p class="product-description">'.$header_info_fields['product_description'].'</p>
+		<p class="tagline">'.$header_info_fields['tagline'].'</p>
+		<p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p>
+		<p class="adress">' . $contact_info_fields['adress'] . '</p>
+		<p class="email">' . $contact_info_fields['email'] . '</p>
+		<p class="welcome_massege">'.$header_info_fields['welcome_message'].'</p>
+
+	</div>';
+	}else{
+		echo'<div class="header-info">
+		<img src="'.$header_info_fields['site_logo']['url'].'"
+		<p class="company-name">'.$header_info_fields['company_name'].'</p>
+		<p class="product-description">'.$header_info_fields['product_description'].'</p>
+		<p class="tagline">'.$header_info_fields['tagline'].'</p>
+	</div>';
+	}
+
+}
+
+function render_contact_info(){
+	$contact_info_fields = get_contact_page_info();
+	echo '<div class="contact-info">
+		<p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p>
+		<p class="time-to-call">' . $contact_info_fields['time_to_call'] . '</p>
+		<p class="phone-number">' . $contact_info_fields['phone_number_2'] . '</p>
+		<p class="adress">' . $contact_info_fields['adress'] . '</p>
+		<p class="email">' . $contact_info_fields['email'] . '</p>
+	</div>';
+
+}
+
+function get_contact_page_info(){
+	$args = array(
+		'post_type'        => 'page',
+	);
+	$contact_info = get_posts($args);
+	foreach($contact_info as  $key => $page){
+		if($page->post_title == 'Contact Us'){
+			$contact_info_fields = get_fields($page->ID);
+		}
+	}
+
+	return $contact_info_fields;
 }
