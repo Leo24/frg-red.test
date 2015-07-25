@@ -572,10 +572,16 @@ function menus_slider_widget_init() {
 add_action( 'widgets_init', 'menus_slider_widget_init' );
 
 
-
-
-
-
-function get_contact_page_content(){
-
+add_action( 'init', 'create_post_type_contact_info' );
+function create_post_type_contact_info() {
+	register_post_type( 'contact_info',
+		array(
+			'labels' => array(
+				'name' => __( 'Сontact and header info' ),
+				'singular_name' => __( 'contact_info' )
+			),
+			'public' => true,
+			'has_archive' => true,
+		)
+	);
 }
