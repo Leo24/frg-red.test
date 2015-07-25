@@ -226,28 +226,28 @@ add_filter( 'wp_title', 'frg_red_wp_title', 10, 2 );
  *
  * @since Twenty Thirteen 1.0
  */
-function frg_red_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Main Widget Area', 'frg_red' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Appears in the footer section of the site.', 'frg_red' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Secondary Widget Area', 'frg_red' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears on posts and pages in the sidebar.', 'frg_red' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-}
-add_action( 'widgets_init', 'frg_red_widgets_init' );
+//function frg_red_widgets_init() {
+//	register_sidebar( array(
+//		'name'          => __( 'Main Widget Area', 'frg_red' ),
+//		'id'            => 'sidebar-1',
+//		'description'   => __( 'Appears in the footer section of the site.', 'frg_red' ),
+//		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+//		'after_widget'  => '</aside>',
+//		'before_title'  => '<h3 class="widget-title">',
+//		'after_title'   => '</h3>',
+//	) );
+//
+//	register_sidebar( array(
+//		'name'          => __( 'Secondary Widget Area', 'frg_red' ),
+//		'id'            => 'sidebar-2',
+//		'description'   => __( 'Appears on posts and pages in the sidebar.', 'frg_red' ),
+//		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+//		'after_widget'  => '</aside>',
+//		'before_title'  => '<h3 class="widget-title">',
+//		'after_title'   => '</h3>',
+//	) );
+//}
+//add_action( 'widgets_init', 'frg_red_widgets_init' );
 
 if ( ! function_exists( 'frg_red_paging_nav' ) ) :
 /**
@@ -550,3 +550,32 @@ function frg_red_customize_preview_js() {
 	wp_enqueue_script( 'frg_red-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20141120', true );
 }
 add_action( 'customize_preview_init', 'frg_red_customize_preview_js' );
+
+
+
+/**
+ * Register our menus and slider widget area.
+ *
+ */
+function menus_slider_widget_init() {
+
+	register_sidebar( array(
+		'name'          => 'Home menu-slider',
+		'id'            => 'menus_slider_widget',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="menus-slider">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'menus_slider_widget_init' );
+
+
+
+
+
+
+function get_contact_page_content(){
+
+}

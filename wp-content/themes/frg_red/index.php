@@ -16,6 +16,14 @@
 
 get_header(); ?>
 
+	<?php
+		if(is_home()):
+			if ( is_active_sidebar( 'menus_slider_widget' ) ) : ?>
+				<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+					<?php dynamic_sidebar( 'menus_slider_widget' ); ?>
+				</div><!-- #primary-sidebar -->
+			<?php endif; ?>
+	<?php endif; ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 		<?php if ( have_posts() ) : ?>
