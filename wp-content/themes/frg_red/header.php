@@ -38,6 +38,7 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</a>
 
+			<?php if(is_front_page() == false):?>
 			<div id="navbar" class="navbar">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 					<button class="menu-toggle"><?php _e( 'Menu', 'frg_red' ); ?></button>
@@ -46,6 +47,7 @@
 					<?php get_search_form(); ?>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
+			<?php endif;?>
 		</header><!-- #masthead -->
 
 		<div id="main" class="site-main">

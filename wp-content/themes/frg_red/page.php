@@ -16,6 +16,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
+			<?php
+			if(is_front_page()):
+				if ( is_active_sidebar( 'menus_slider_widget' ) ) : ?>
+					<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+						<?php dynamic_sidebar( 'menus_slider_widget' ); ?>
+					</div><!-- #primary-sidebar -->
+				<?php endif; ?>
+			<?php endif; ?>
+
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
