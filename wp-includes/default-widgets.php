@@ -1005,7 +1005,8 @@ class WP_Widget_RSS extends WP_Widget {
 		$url = esc_url(strip_tags($url));
 		$icon = includes_url('images/rss.png');
 		if ( $title )
-			$title = "<a class='rsswidget' href='$url'><img style='border:0' width='14' height='14' src='$icon' alt='RSS' /></a> <a class='rsswidget' href='$link'>$title</a>";
+//			$title = "<a class='rsswidget' href='$url'><img style='border:0' width='14' height='14' src='$icon' alt='RSS' /></a> <a class='rsswidget' href='$link'>$title</a>";
+			$title = "<div><p class='rsswidget'>$title</p></div>";
 
 		echo $args['before_widget'];
 		if ( $title ) {
@@ -1100,7 +1101,7 @@ function wp_widget_rss_output( $rss, $args = array() ) {
 				$summary = substr( $summary, 0, -5 ) . '[&hellip;]';
 			}
 
-			$summary = '<div class="rssSummary">' . esc_html( $summary ) . '</div>';
+			$summary = '<div class="rssSummary"><p>' . mb_substr(esc_html( $summary ), 0, 30, 'utf-8') . '</p></div>';
 		}
 
 		$date = '';
@@ -1108,7 +1109,7 @@ function wp_widget_rss_output( $rss, $args = array() ) {
 			$date = $item->get_date( 'U' );
 
 			if ( $date ) {
-				$date = ' <span class="rss-date">' . date_i18n( get_option( 'date_format' ), $date ) . '</span>';
+				$date = ' <p class="rss-date">' . date_i18n( get_option( 'date_format' ), $date ) . '</p>';
 			}
 		}
 
@@ -1122,14 +1123,16 @@ function wp_widget_rss_output( $rss, $args = array() ) {
 		}
 
 		if ( $link == '' ) {
-			echo "<li>$title{$date}{$summary}{$author}</li>";
+			echo "<li>{$date}$title{$summary}{$author}</li>";
 		} elseif ( $show_summary ) {
-			echo "<li><a class='rsswidget' href='$link'>$title</a>{$date}{$summary}{$author}</li>";
+			echo "<li>{$date}<p><a class='rsswidget' href='$link'>$title</a>{$summary}{$author}</p></li>";
 		} else {
-			echo "<li><a class='rsswidget' href='$link'>$title</a>{$date}{$author}</li>";
+			echo "<li>{$date}<p><a class='rsswidget' href='$link'>$title</a>{$author}</p></li>";
 		}
 	}
 	echo '</ul>';
+	echo '<a class="btn btn-danger more-news" href="'.$rss->get_permalink().'">More news</a>';
+
 	$rss->__destruct();
 	unset($rss);
 }

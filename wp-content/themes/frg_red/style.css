@@ -3212,6 +3212,13 @@
 		/*color: #333;*/
 	/*}*/
 /*}*/
+body{
+	background-image: url("images/main_bg.png");
+}
+/*Header styles*/
+#page{
+	background-color: #DC0F00;
+}
 .row{
 	margin-top: -30px;
 }
@@ -3220,7 +3227,7 @@
 	margin-top: 58px;
 }
 .company-name{
-	font-size: 20px;
+	font-size: 1.7em;
 	font-weight: bold;
 }
 .company-name,
@@ -3231,6 +3238,26 @@
 .email{
 	margin-bottom: 0;
 	text-align: center;
+}
+
+.product-description,
+.tagline{
+	font-size: 0.8em;
+}
+
+.welcome-massage,
+.phone-number,
+.adress,
+.email{
+	color: #FFF;
+}
+
+.contact-header-info .gallery-link{
+	border: none;
+	border-radius: 0;
+	color: #FFF;
+	background-color: #000;
+	text-transform: uppercase;
 }
 
 .menu-main-page-menu-slider-top-container,
@@ -3285,4 +3312,110 @@
 	clear: both;
 }
 
+/*End header styles*/
+
+/*Widgets styles*/
+.home-bottom-widget ul{
+	list-style: none;
+}
+.home-bottom-widget .widget-wrapper{
+	padding-left: 15px;
+}
+
+.home-bottom-widget .bottom-news-block {
+	margin:0 25px;
+	width: 30%;
+	height: 450px;
+	padding: 0;
+	background-color: #312F2F;
+}
+
+.home-bottom-widget ul li:first-child{
+	margin-left: 0;
+}
+.home-bottom-widget ul li:last-child{
+	margin-right: 0;
+}
+
+.bottom-news-block h2{
+	margin-left: 31px;
+	margin-bottom: 20px;
+}
+.bottom-news-block h2,
+.bottom-news-block p{
+	color: #FFF;
+
+}
+.bottom-news-block p{
+	padding: 5px 30px;
+	margin-bottom: 0;
+}
+.bottom-news-block p.rss-date{
+	color: #a2a2a2;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.bottom-news-block a{
+	color: #FFF;
+}
+
+.bottom-news-block a.more-news{
+	position: absolute;
+	bottom: 20px;
+	right: 25px;
+	background-color: #B9250D;
+}
+
+.bottom-news-block img{
+	width: 100%;
+}
+
+/*End widgets styles*/
+
+
+/*Footer Styles*/
+.footer-info{
+	margin-top: 50px;
+	padding: 10px;
+	background-color: #C50D00;
+}
+
+.left-block{
+	margin-top: 1em;
+}
+.left-block-image{
+	float: left;
+}
+
+.left-block p{
+	margin-left: 8em;
+	margin-bottom: 0;
+	text-align: left;
+}
+
+.right-block-info{
+	margin: 1.8em 0.8em 0 0;
+}
+
+.right-block p{
+	margin: 0;
+	text-align: right;
+}
+
+.right-block-image,
+.right-block-info{
+
+	float: right;
+}
+.right-block-info,
+.copyright{
+	color: #FFF;
+}
+.copyright{
+	margin-top: 5px;
+	text-align: center;
+}
+
+/*End footer Styles*/
 

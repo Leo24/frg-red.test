@@ -13,14 +13,14 @@
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php get_sidebar( 'main' ); ?>
+			<?php render_footer_info(); ?>
 
-			<div class="site-info">
-				<?php do_action( 'frg_red_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'frg_red' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'frg_red' ); ?>"><?php printf( __( 'Proudly powered by %s', 'frg_red' ), 'WordPress' ); ?></a>
-			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
-
+<div class="site-info">
+	<?php do_action( 'frg_red_credits' ); ?>
+	<p class="copyright"><?php printf( __( '&#169 2014 %s', 'frg_red' ), 'Fort Rouge Glass' ); ?></p>
+</div><!-- .site-info -->
 	<?php wp_footer(); ?>
 </body>
 </html>

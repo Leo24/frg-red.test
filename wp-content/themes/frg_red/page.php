@@ -40,8 +40,10 @@ get_header(); ?>
 						<?php
 						if(is_front_page()):
 							if ( is_active_sidebar( 'home_bottom_news_blocks' ) ) : ?>
-								<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-									<?php dynamic_sidebar( 'home_bottom_news_blocks' ); ?>
+								<div id="home-bottom-widget" class="home-bottom-widget row" role="complementary">
+									<ul class="widget-wrapper">
+										<?php dynamic_sidebar( 'home_bottom_news_blocks' ); ?>
+									</ul>
 								</div><!-- #primary-sidebar -->
 							<?php endif; ?>
 						<?php endif; ?>
@@ -92,7 +94,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-meta">
-						<?php edit_post_link( __( 'Edit', 'frg_red' ), '<span class="edit-link">', '</span>' ); ?>
+<!--						--><?php //edit_post_link( __( 'Edit', 'frg_red' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post -->
 

@@ -571,9 +571,9 @@ function menus_slider_widget_init() {
 	register_sidebar( array(
 		'name'          => 'Home bottom news blocks',
 		'id'            => 'home_bottom_news_blocks',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="bottom-news-blocks">',
+		'before_widget' => '<li class="bottom-news-block col-lg-4">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
 	) );
 
@@ -589,6 +589,20 @@ function create_post_type_contact_info() {
 			'labels' => array(
 				'name' => __( 'Header info' ),
 				'singular_name' => __( 'header_info' )
+			),
+			'public' => true,
+			'has_archive' => true,
+		)
+	);
+}
+
+add_action( 'init', 'create_post_type_footer_info' );
+function create_post_type_footer_info() {
+	register_post_type( 'footer_info',
+		array(
+			'labels' => array(
+				'name' => __( 'Footer info' ),
+				'singular_name' => __( 'footer_info' )
 			),
 			'public' => true,
 			'has_archive' => true,
@@ -633,14 +647,44 @@ $header_info = get_posts($args);
 function render_contact_info(){
 	$contact_info_fields = get_contact_page_info();
 	echo '<div class="contact-info">
-		<p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p>
-		<p class="time-to-call">' . $contact_info_fields['time_to_call'] . '</p>
-		<p class="phone-number">' . $contact_info_fields['phone_number_2'] . '</p>
-		<p class="adress">' . $contact_info_fields['adress'] . '</p>
-		<p class="email">' . $contact_info_fields['email'] . '</p>
+		<div class><p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p></div>
+		<div class><p class="time-to-call">' . $contact_info_fields['time_to_call'] . '</p></div>
+		<div class><p class="phone-number">' . $contact_info_fields['phone_number_2'] . '</p></div>
+		<div class><p class="adress">' . $contact_info_fields['adress'] . '</p></div>
+		<div class><p class="email">' . $contact_info_fields['email'] . '</p></div>
 	</div>';
 
 }
+
+function render_footer_info(){
+	$contact_info_fields = get_contact_page_info();
+
+
+$args = array(
+	'post_title'	   => 'Footer info',
+	'category'         => '',
+	'category_name'    => '',
+	'post_type'        => 'footer_info',
+
+);
+$footer_info = get_posts($args);
+	$footer_info_fields = get_fields($footer_info[0]->ID);
+	echo'<div class="footer-info row">
+				<div class="left-block col-lg-6 col-md-2 col-sm-2 col-xs-2">
+					<div class="left-block-image"><a href="'.$footer_info_fields['link_for_left_footer_image'].'"><img src="'.$footer_info_fields['left_footer_image']['url'].'"/></a></div>
+					<div class="adress"><p>' . $contact_info_fields['adress'] . '</p></div>
+					<div class="phone-number"><p>' . $contact_info_fields['phone_number_1'].'</p></div>
+					<div class="email"><p>' . $contact_info_fields['email'] . '</p></div>
+				</div>
+				<div class="right-block col-lg-6 col-md-2 col-sm-2 col-xs-2">
+					<div class="right-block-image"><a href="'.$footer_info_fields['link_for_right_footer_image'].'"><img src="'.$footer_info_fields['right_footer_image']['url'].'"/></a></div>
+					<div class="right-block-info">'.$footer_info_fields['info_for_right_footer_image'].'</div>
+				</div>
+		</div>';
+
+}
+
+
 
 function get_contact_page_info(){
 	$args = array(
