@@ -16,15 +16,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<?php
-			if(is_front_page()):
-				if ( is_active_sidebar( 'menus_slider_widget' ) ) : ?>
-					<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-						<?php dynamic_sidebar( 'menus_slider_widget' ); ?>
-					</div><!-- #primary-sidebar -->
-				<?php endif; ?>
-			<?php endif; ?>
-
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -36,12 +27,24 @@ get_header(); ?>
 						</div>
 						<?php endif; ?>
 
+						<?php if(is_front_page() == false): ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<?php endif; ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'frg_red' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+
+
+						<?php
+						if(is_front_page()):
+							if ( is_active_sidebar( 'home_bottom_news_blocks' ) ) : ?>
+								<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+									<?php dynamic_sidebar( 'home_bottom_news_blocks' ); ?>
+								</div><!-- #primary-sidebar -->
+							<?php endif; ?>
+						<?php endif; ?>
 
 
 

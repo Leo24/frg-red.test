@@ -568,6 +568,16 @@ function menus_slider_widget_init() {
 		'after_title'   => '</h2>',
 	) );
 
+	register_sidebar( array(
+		'name'          => 'Home bottom news blocks',
+		'id'            => 'home_bottom_news_blocks',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="bottom-news-blocks">',
+		'after_title'   => '</h2>',
+	) );
+
+
 }
 add_action( 'widgets_init', 'menus_slider_widget_init' );
 
@@ -607,6 +617,7 @@ $header_info = get_posts($args);
 		<p class="adress">' . $contact_info_fields['adress'] . '</p>
 		<p class="email">' . $contact_info_fields['email'] . '</p>
 		<p class="welcome_massege">'.$header_info_fields['welcome_message'].'</p>
+		<a class="gallery-link" href="'.$header_info_fields['gallery_link'].'" rel="gallery">view gallery</a>
 
 	</div>';
 	}else{
@@ -645,3 +656,5 @@ function get_contact_page_info(){
 
 	return $contact_info_fields;
 }
+
+
