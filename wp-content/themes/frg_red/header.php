@@ -20,7 +20,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -40,13 +40,24 @@
 
 			<?php get_header_info(is_front_page());?>
 
-			<?php if(is_front_page() == false):?>
+			<?php
+			if(is_front_page()):
+				if ( is_active_sidebar( 'menus_slider_widget' ) ) : ?>
+					<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+						<?php dynamic_sidebar( 'menus_slider_widget' ); ?>
+					</div><!-- #primary-sidebar -->
+				<?php endif; ?>
+<!--			--><?php //endif; ?>
+
+			<?php else:
+//			if(is_front_page() == false):
+				?>
 			<div id="navbar" class="navbar">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 					<button class="menu-toggle"><?php _e( 'Menu', 'frg_red' ); ?></button>
 <!--					<a class="screen-reader-text skip-link" href="#content" title="--><?php //esc_attr_e( 'Skip to content', 'frg_red' ); ?><!--">--><?php //_e( 'Skip to content', 'frg_red' ); ?><!--</a>-->
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
-					<?php get_search_form(); ?>
+<!--					--><?php //get_search_form(); ?>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 			<?php endif;?>
