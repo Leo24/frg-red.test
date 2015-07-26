@@ -924,13 +924,15 @@ img.ug-sepia-effect{
 .ug-bullets.ug-skin-default .ug-bullet{
 	width:15px;
 	height:15px;
-	background-image:url('../skins/default/slider_bullets.png');
-	background-position:top left;
-	margin-left:5px;
+	/*background-image:url('../skins/default/slider_bullets.png');*/
+	background-color: #FFF;
+	/*background-position: top left;*/
+	margin:0 7px;
 }
 
 .ug-bullets.ug-skin-default .ug-bullet.ug-bullet-active{
-	background-position:bottom left;
+	background-color: #FF0000;
+	/*background-position:bottom left;*/
 }
 
 .ug-bullets.ug-skin-default.ug-bullets-gray .ug-bullet{ 
