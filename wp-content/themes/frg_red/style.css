@@ -3212,3 +3212,77 @@
 		/*color: #333;*/
 	/*}*/
 /*}*/
+.row{
+	margin-top: -30px;
+}
+
+.contact-header-info{
+	margin-top: 58px;
+}
+.company-name{
+	font-size: 20px;
+	font-weight: bold;
+}
+.company-name,
+.product-description,
+.tagline,
+.phone-number,
+.adress,
+.email{
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.menu-main-page-menu-slider-top-container,
+.menu-main-page-menu-top-slider-bottom-container{
+	position: relative;
+	z-index: 2;
+}
+.menu-main-page-menu-slider-top-container{
+	top: 58px;
+	background-color: #000;
+	opacity: 0.8;
+}
+
+.menu-main-page-menu-top-slider-bottom-container{
+	bottom: 58px;
+	background-color: #B9250D;
+	opacity: 0.8;
+}
+
+.menu-main-page-menu-slider-top-container ul,
+.menu-main-page-menu-top-slider-bottom-container ul{
+	list-style: none;
+	display: table-cell;
+	height: 48px;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+.menu-main-page-menu-slider-top-container li:first-child,
+.menu-main-page-menu-top-slider-bottom-container li:first-child{
+	margin-left: 0;
+}
+
+.menu-main-page-menu-slider-top-container li,
+.menu-main-page-menu-top-slider-bottom-container li{
+	margin: 0 15px;
+	float: left;
+}
+.menu-main-page-menu-slider-top-container li a,
+.menu-main-page-menu-top-slider-bottom-container li a{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 0 1em red;
+}
+.menu-main-page-menu-slider-top-container li a:hover,
+.menu-main-page-menu-top-slider-bottom-container li a:hover{
+	text-shadow: 1px 1px 2px black, 0 0 1em red;
+
+}
+
+.unite-gallery{
+	clear: both;
+}
+
+

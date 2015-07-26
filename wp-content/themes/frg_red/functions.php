@@ -608,16 +608,16 @@ $header_info = get_posts($args);
 	$header_info_fields = get_fields($header_info[0]->ID);
 	if($param){
 		$contact_info_fields = get_contact_page_info();
-		echo'<div class="contact-header-info .col-lg-5">
-				<div class=".col-lg-3"><img class="img-responsive" src="'.$header_info_fields['site_logo']['url'].'"/></div>
-				<div class=".col-lg-3"><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
-				<div class=".col-lg-3"><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
-				<div class=".col-lg-3"><p class="tagline">'.$header_info_fields['tagline'].'</p></div>
-				<div class=".col-lg-3"><p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p></div>
-				<div class=".col-lg-3"><p class="adress">' . $contact_info_fields['adress'] . '</p></div>
-				<div class=".col-lg-3"><p class="email">' . $contact_info_fields['email'] . '</p></div>
-				<div class=".col-lg-3 .col-md-5 .col-sm-2 .col-xs-4"><p class="welcome-massage">'.$header_info_fields['welcome_message'].'</p></div>
-				<div class=".col-lg-3"><a class="gallery-link" href="'.$header_info_fields['gallery_link'].'" rel="gallery">view gallery</a></div>
+		echo'<div class="contact-header-info col-lg-3 col-md-4 col-sm-4 col-xs-4">
+				<div class=""><img class="img-responsive" src="'.$header_info_fields['site_logo']['url'].'"/></div>
+				<div class=""><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
+				<div class=""><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
+				<div class=""><p class="tagline">'.$header_info_fields['tagline'].'</p></div>
+				<div class=""><p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p></div>
+				<div class=""><p class="adress">' . $contact_info_fields['adress'] . '</p></div>
+				<div class=""><p class="email">' . $contact_info_fields['email'] . '</p></div>
+				<div class="welcome-massage">'.$header_info_fields['welcome_message'].'</div>
+				<div class=""><a class="gallery-link btn btn-default" href="'.$header_info_fields['gallery_link'].'" rel="gallery">view gallery</a></div>
 			</div>';
 	}else{
 		echo'<div class="header-info">
