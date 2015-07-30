@@ -1100,8 +1100,8 @@ function wp_widget_rss_output( $rss, $args = array() ) {
 			if ( '[...]' == substr( $summary, -5 ) ) {
 				$summary = substr( $summary, 0, -5 ) . '[&hellip;]';
 			}
-
-			$summary = '<div class="rssSummary"><p>' . mb_substr(esc_html( $summary ), 0, 30, 'utf-8') . '</p></div>';
+$string = mb_substr(esc_html( $summary ), 0, 50, 'utf-8');
+			$summary = '<div class="rssSummary"><p>' . strbefore($string, ' ') . '</p></div>';
 		}
 
 		$date = '';
@@ -1480,3 +1480,13 @@ function wp_widgets_init() {
 }
 
 add_action('init', 'wp_widgets_init', 1);
+
+
+
+function strbefore($string, $substring) {
+	$pos = strpos($string, $substring);
+	if ($pos === false)
+		return $string;
+	else
+		return(substr($string, 0, $pos));
+}
