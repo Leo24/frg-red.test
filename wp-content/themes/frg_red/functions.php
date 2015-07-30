@@ -571,7 +571,7 @@ function menus_slider_widget_init() {
 	register_sidebar( array(
 		'name'          => 'Home bottom news blocks',
 		'id'            => 'home_bottom_news_blocks',
-		'before_widget' => '<li class="bottom-news-block col-lg-4">',
+		'before_widget' => '<li class="bottom-news-block center-block  col-lg-4 col-md-5 col-sm-8 col-xs-8">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
@@ -622,8 +622,8 @@ $header_info = get_posts($args);
 	$header_info_fields = get_fields($header_info[0]->ID);
 	if($param){
 		$contact_info_fields = get_contact_page_info();
-		echo'<div class="contact-header-info col-lg-3 col-md-4 col-sm-4 col-xs-4">
-				<div class=""><img class="img-responsive" src="'.$header_info_fields['site_logo']['url'].'"/></div>
+		echo'<div class="contact-header-info center-block col-lg-3 col-md-12 col-sm-12 col-xs-12">
+				<div class=""><img class="img-responsive center-block" src="'.$header_info_fields['site_logo']['url'].'"/></div>
 				<div class=""><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
 				<div class=""><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
 				<div class=""><p class="tagline">'.$header_info_fields['tagline'].'</p></div>
@@ -631,10 +631,10 @@ $header_info = get_posts($args);
 				<div class=""><p class="adress">' . $contact_info_fields['adress'] . '</p></div>
 				<div class=""><p class="email">' . $contact_info_fields['email'] . '</p></div>
 				<div class="welcome-massage">'.$header_info_fields['welcome_message'].'</div>
-				<div class=""><a class="gallery-link btn btn-default" href="'.$header_info_fields['gallery_link'].'" rel="gallery">view gallery</a></div>
+				<div class=""><a class="gallery-link btn btn-default center-block " href="'.$header_info_fields['gallery_link'].'" rel="gallery">view gallery</a></div>
 			</div>';
 	}else{
-		echo'<div class="header-info">
+		echo'<div class="contact-header-info center-block col-lg-3 col-md-12 col-sm-12 col-xs-12">
 		<div class=""><img src="'.$header_info_fields['site_logo']['url'].'"/></div>
 		<div class=""><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
 		<div class=""><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
@@ -658,25 +658,22 @@ function render_contact_info(){
 
 function render_footer_info(){
 	$contact_info_fields = get_contact_page_info();
-
-
 $args = array(
 	'post_title'	   => 'Footer info',
 	'category'         => '',
 	'category_name'    => '',
 	'post_type'        => 'footer_info',
-
 );
 $footer_info = get_posts($args);
 	$footer_info_fields = get_fields($footer_info[0]->ID);
 	echo'<div class="footer-info row">
-				<div class="left-block col-lg-6 col-md-2 col-sm-2 col-xs-2">
+				<div class="left-block col-lg-6 col-md-6 col-sm-6 col-xs-6">
 					<div class="left-block-image"><a href="'.$footer_info_fields['link_for_left_footer_image'].'"><img src="'.$footer_info_fields['left_footer_image']['url'].'"/></a></div>
 					<div class="adress"><p>' . $contact_info_fields['adress'] . '</p></div>
 					<div class="phone-number"><p>' . $contact_info_fields['phone_number_1'].'</p></div>
 					<div class="email"><p>' . $contact_info_fields['email'] . '</p></div>
 				</div>
-				<div class="right-block col-lg-6 col-md-2 col-sm-2 col-xs-2">
+				<div class="right-block pull-right col-lg-6 col-md-6 col-sm-6 col-xs-6">
 					<div class="right-block-image"><a href="'.$footer_info_fields['link_for_right_footer_image'].'"><img src="'.$footer_info_fields['right_footer_image']['url'].'"/></a></div>
 					<div class="right-block-info">'.$footer_info_fields['info_for_right_footer_image'].'</div>
 				</div>

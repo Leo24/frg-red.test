@@ -24,6 +24,7 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="shortcut icon" and ends with /favicon.ico" />
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -43,7 +44,7 @@
 			<?php
 			if(is_front_page()):
 				if ( is_active_sidebar( 'menus_slider_widget' ) ) : ?>
-					<div id="primary-sidebar" class="primary-sidebar widget-area col-lg-9" role="complementary">
+					<div id="primary-sidebar" class="primary-sidebar widget-area center-block col-lg-9 col-md-11 col-sm-8 col-xs-8" role="complementary">
 						<?php dynamic_sidebar( 'menus_slider_widget' ); ?>
 					</div><!-- #primary-sidebar -->
 				<?php endif; ?>

@@ -3244,6 +3244,9 @@ body{
 .tagline{
 	font-size: 0.8em;
 }
+.welcome-massage{
+	margin-top: 20px;
+}
 
 .welcome-massage,
 .phone-number,
@@ -3321,13 +3324,44 @@ body{
 .home-bottom-widget .widget-wrapper{
 	padding-left: 15px;
 }
-
 .home-bottom-widget .bottom-news-block {
-	margin:0 25px;
-	width: 30%;
+	margin: 0 25px;
 	height: 450px;
 	padding: 0;
 	background-color: #312F2F;
+}
+
+@media (max-width: 1200px) {
+	.primary-sidebar.widget-area,
+	.welcome-massage p:first-child{
+		clear: both;
+		float: none;
+	}
+}
+@media (min-width: 1198px) {
+	.home-bottom-widget .bottom-news-block {
+		width: 30%;
+	}
+}
+@media (max-width: 990px) {
+	#home-bottom-widget .bottom-news-block {
+		clear: both;
+		float: none;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 990px) and (max-width:1198px){
+	.home-bottom-widget ul li.bottom-news-block:first-child {
+		margin-left: 40px;
+		margin-right: 38px;
+		margin-bottom: 34px;
+	}
+	.home-bottom-widget ul li.bottom-news-block:last-child {
+		clear: both;
+		float: none;
+		margin: 0 auto;
+	}
 }
 
 .home-bottom-widget ul li:first-child{
