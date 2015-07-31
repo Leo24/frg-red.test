@@ -3255,7 +3255,21 @@ body{
 	color: #FFF;
 }
 
-.contact-header-info .gallery-link{
+.contact-header-info p{
+	color: #FFF;
+	font-size: 1em;
+}
+.contact-header-info .company-name{
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+.contact-header-info .product-description{
+	text-transform: uppercase;
+}
+
+.contact-header-info .gallery-link,
+.page .request-button-link{
 	border: none;
 	border-radius: 0;
 	color: #FFF;
@@ -3299,7 +3313,8 @@ body{
 	float: left;
 }
 .menu-main-page-menu-slider-top-container li a,
-.menu-main-page-menu-top-slider-bottom-container li a{
+.menu-main-page-menu-top-slider-bottom-container li a,
+.page .menu-page-menu-container li a{
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
@@ -3453,3 +3468,84 @@ body{
 
 /*End footer Styles*/
 
+
+
+
+/*Page styles*/
+
+/*Page header styles*/
+
+.page .contact-header-info {
+	background: url("./images/image_r46_c23.png") no-repeat;
+	background-size: 100% 30.5%;
+	background-position: bottom;
+}
+.page .contact-header-info img{
+	display: block;
+	margin: 0 auto;
+}
+
+.page .menu-page-menu-container {
+	opacity: 0.8;
+}
+.page .menu-page-menu-container ul{
+	display: table-cell;
+	height: 48px;
+	background-color: #000;
+	list-style: none;
+	vertical-align: middle;
+
+}
+.page .menu-page-menu-container li{
+	margin: 0 15px;
+	float: left;
+}
+.page .menu-page-menu-container li:last-child{
+	margin-right: 45px;
+}
+
+
+.page .reflected h2{
+	position: relative;
+	font-size: 3em;
+	text-transform: uppercase;
+	color: #fff;
+
+}
+.page  .reflected h2:before, .reflected:after {
+	display: block;
+	position: absolute;
+	bottom: -.8em; /* You should change this value to fit your font */
+	left: 0;
+	right: 0;
+}
+.page .reflected h2:before {
+	/*content: 'REFLECT';*/
+	opacity: .3;
+	color: #fff;
+	/*background-color: #FFF;*/
+	/* This is how the text is flipped vertically */
+	-webkit-transform: scaleY(-1);
+	-moz-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+}
+.page .reflected h2:after {
+	/* Fading using CSS gradient */
+	/* Don't forget to change the colors to your background color */
+	background: -webkit-gradient(linear, left top, left center, from(rgba(255,255,255,0)), to(rgb(255,255,255)));
+	background: -moz-linear-gradient(top, rgba(255,255,255,0), rgb(255,255,255));
+	/* I left out the `filter` property,
+       because IE doesn't know `:before` and `:after` pseudo-elements anyway */
+	/*content: ' ';*/
+	height: 1em;
+}
+
+.page .request-button-link{
+	position: absolute;
+	bottom: 30%;
+	left: 22%;
+}
+
+/*End page header styles*/
+
+/*End page styles*/
