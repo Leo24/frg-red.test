@@ -634,11 +634,15 @@ $header_info = get_posts($args);
 				<div class=""><a class="gallery-link btn btn-default center-block " href="'.$header_info_fields['gallery_link'].'" rel="gallery">view gallery</a></div>
 			</div>';
 	}else{
-		echo'<div class="contact-header-info center-block col-lg-3 col-md-12 col-sm-12 col-xs-12">
-		<div class=""><img src="'.$header_info_fields['site_logo']['url'].'"/></div>
-		<div class=""><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
-		<div class=""><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
-		<div class=""><p class="tagline">'.$header_info_fields['tagline'].'</p></div>
+		echo'<div class="contact-header-info center-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="col-lg-3"><img src="'.$header_info_fields['site_logo']['url'].'"/></div>
+		<div class="col-lg-3"><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
+		<div class="col-lg-3"><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
+		<div class="col-lg-3"><p class="tagline">'.$header_info_fields['tagline'].'</p></div>
+		<div class="col-lg-3"><p class="tagline">'.$header_info_fields['reflect_tagline'].'</p></div>
+		<div class="col-lg-3"><p class="tagline">'.$header_info_fields['request_quote_image'].'</p></div>
+		<div class="col-lg-3"><p class="tagline">'.$header_info_fields['request_quote_button_text'].'</p></div>
+
 	</div>';
 	}
 
