@@ -33,15 +33,17 @@ get_header(); ?>
 						<?php endif; ?>
 					</header><!-- .entry-header -->
 
-					<div class="entry-content about-us-page col-lg-7 col-md-7 col-sm-8 col-xs-8">
+					<div class="entry-content about-us-page col-lg-7 col-md-7 col-sm-7 col-xs-8">
 						<?php the_content(); ?>
 <!--						--><?php //wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'frg_red' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 					</div><!-- .entry-content -->
 
 
 					<?php if ( is_active_sidebar( 'about_us_page_widget' ) ) : ?>
-						<div class="about-us-page-widget widget-area col-lg-4 col-md-3 col-sm-8 col-xs-8" role="complementary">
-							<?php dynamic_sidebar( 'about_us_page_widget' ); ?>
+						<div class="about-us-page-widget widget-area col-lg-4 col-md-4 col-sm-4 col-xs-8" role="complementary">
+							<ul>
+								<?php dynamic_sidebar( 'about_us_page_widget' ); ?>
+							</ul>
 						</div><!-- #primary-sidebar -->
 					<?php endif; ?>
 

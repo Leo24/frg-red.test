@@ -40,7 +40,7 @@
 
 
 body{
-	background-image: url("images/main_bg.png");
+	background-image: url("images/main-background.png");
 }
 article{
 	margin-top: 35px;
@@ -166,7 +166,7 @@ article{
 
 .menu-main-page-menu-slider-top-container ul,
 .menu-main-page-menu-top-slider-bottom-container ul,
-.about-us-page-widget {
+.about-us-page-widget ul{
 	list-style: none;
 	display: table-cell;
 	height: 48px;
@@ -415,10 +415,15 @@ article{
 	font-weight: bold;
 	margin-left: 1.2em;
 }
+.entry-content a img{
+	margin: 10px 0 10px 15px;
+	float: right;
+}
 
 .slideshowlink{
 	display: none
 }
+
 
 /*End page header styles*/
 
