@@ -577,6 +577,15 @@ function menus_slider_widget_init() {
 		'after_title'   => '</h2>',
 	) );
 
+	register_sidebar( array(
+		'name'          => 'About us page side widget',
+		'id'            => 'about_us_page_widget',
+		'before_widget' => '<li class="about-us-page-widget-item">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
 
 }
 add_action( 'widgets_init', 'menus_slider_widget_init' );
@@ -622,7 +631,7 @@ $header_info = get_posts($args);
 	$header_info_fields = get_fields($header_info[0]->ID);
 	if($param){
 		$contact_info_fields = get_contact_page_info();
-		echo'<div class="contact-header-info center-block col-lg-3 col-md-12 col-sm-12 col-xs-12">
+		echo'<div class="contact-header-info-front center-block col-lg-3 col-md-12 col-sm-12 col-xs-12">
 				<div class=""><img class="img-responsive center-block" src="'.$header_info_fields['site_logo']['url'].'"/></div>
 				<div class=""><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
 				<div class=""><p class="product-description">'.$header_info_fields['product_description'].'</p></div>
@@ -644,7 +653,7 @@ $header_info = get_posts($args);
 						<div class="reflected reflect-tagline"><img class="img-responsive center-block" src="'.$header_info_fields['reflect_tagline_image']['url'].'" alt="reflect your style"/>
 						</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 header-request-quote">
 						<img class="request-quote-image" src="'.$header_info_fields['request_quote_image']['url'].'"/>
 						<a class="request-button-link btn btn-default" href="'.$header_info_fields['request_quote_button_link'].'" rel="gallery">'.$header_info_fields['request_quote_button_text'].'</a>
 				</div>
@@ -704,15 +713,6 @@ function get_contact_page_info(){
 
 	return $contact_info_fields;
 }
-
-//function my_scripts_enqueue() {
-//	wp_register_script( 'bootstrap-js', '://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), NULL, true );
-//	wp_register_style( 'bootstrap-css', '://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', false, NULL, 'all' );
-//
-//	wp_enqueue_script( 'bootstrap-js' );
-//	wp_enqueue_style( 'bootstrap-css' );
-//}
-//add_action( 'wp_enqueue_scripts', 'my_scripts_enqueue' );
 
 function my_scripts_enqueue() {
 	wp_register_script( 'bootstrap-js', get_template_directory_uri().'/js/bootstrap/js/bootstrap.js', array('jquery'), NULL, true );

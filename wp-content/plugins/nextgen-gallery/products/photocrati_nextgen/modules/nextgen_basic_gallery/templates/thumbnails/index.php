@@ -10,7 +10,7 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
     <?php if (!empty($slideshow_link)): ?>
 	<div class="slideshowlink">
         <a href='<?php esc_attr_e($slideshow_link) ?>'><?php echo $slideshow_link_text ?></a>
-		
+
 	</div>
 	<?php endif ?>
 	<?php

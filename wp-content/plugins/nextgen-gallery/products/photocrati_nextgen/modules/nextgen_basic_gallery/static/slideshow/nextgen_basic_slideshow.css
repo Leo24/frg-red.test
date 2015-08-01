@@ -15,6 +15,7 @@ body {
 }
 
 .slideshowlink {
+    display: none;
 }
 
 /* ----------- JS Slideshow -------------*/
