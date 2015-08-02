@@ -85,7 +85,6 @@ get_header(); ?>
 								</script>
 							<?php endif; ?>
 						</div>
-	<?php render_contact_info();?>
 
 <?php endif;?>
 

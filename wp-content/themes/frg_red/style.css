@@ -34,20 +34,48 @@
  /**/
 
 @font-face {
-	font-family: MyriadPro-Regular;
-	src: url('/fonts/MyriadPro/MyriadPro-Regular.otf');
+	font-family: Roboto-Regular;
+	src: url('/fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: Roboto-Bold;
+	src: url('/fonts/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+	font-family: Roboto-Medium;
+	src: url('/fonts/roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: Roboto-Light;
+	src: url('/fonts/roboto/Roboto-Light.ttf');
 }
 
 
 body{
 	background-image: url("images/main-background.png");
 }
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body p{
+	font-family: "Roboto-Regular";
+}
+
+body h1{
+	font-size: 2em;
+}
+
 article{
 	margin-top: 35px;
 }
 
 .site-content {
-	font-family: "MyriadPro-Regular";
+	font-family: "Roboto-Regular";
 	font-size: 1em;
 	line-height: 1.42857143;
 	color: #fff;
@@ -65,6 +93,18 @@ article{
 .contact-header-info-front{
 	margin-top: 58px;
 }
+
+.block-1 img{
+	width: 100%;
+}
+
+.contact-header-info .block-2{
+	top: -30px;
+}
+.contact-header-info .block-3{
+	top: -20px;
+}
+
 .company-name{
 	font-size: 1.7em;
 	font-weight: bold;
@@ -105,13 +145,32 @@ article{
 	font-weight: bold;
 }
 
+.contact-header-info .contacts{
+	padding-bottom: 25px;
+}
+
+.contact-header-info .contacts{
+	font-size: 0.89em;
+}
+.contact-header-info .contacts .email{
+	font-weight: bold;
+}
+.contact-header-info .contacts .phone-number{
+	background: url("images/phone-ico.png") no-repeat;
+	background-position: 27% 0;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
 .contact-header-info .product-description,
 .contact-header-info-front .product-description{
+	font-size: 0.8em;
 	text-transform: uppercase;
 }
 
 
 .page .request-button-link,
+.archive .request-button-link,
 .page .gallery-link{
 	border: none;
 	border-radius: 0;
@@ -185,7 +244,8 @@ article{
 }
 .menu-main-page-menu-slider-top-container li a,
 .menu-main-page-menu-top-slider-bottom-container li a,
-.page .menu-page-menu-container li a{
+.page .menu-page-menu-container li a,
+.archive .menu-page-menu-container li a{
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
@@ -226,8 +286,9 @@ article{
 	.page .contact-header-info.center-block {
 		background-size: 100% 38.5%;
 	}
-	.page .request-button-link.btn {
-		left: 39%;
+	.page .request-button-link.btn,
+	.archive .request-button-link.btn {
+		left: 30%;
 	}
 }
 @media (min-width: 1198px) {
@@ -254,7 +315,8 @@ article{
 		float: none;
 		margin: 0 auto;
 	}
-	.page .request-button-link.btn {
+	.page .request-button-link.btn,
+	.archive .request-button-link.btn {
 		left: 42%;
 	}
 }
@@ -355,20 +417,25 @@ article{
 
 /*Page header styles*/
 
+.archive .contact-header-info,
 .page .contact-header-info {
-	background: url("./images/image_r46_c23.png") no-repeat;
-	background-size: 100% 30.5%;
+	/*background: url("./images/image_r46_c23.png") no-repeat;*/
+	background: linear-gradient(to top, #DC0F00, #9A0B00) no-repeat;
+	background-size: 100% 44%;
 	background-position: bottom;
 }
-.page .contact-header-info img{
+.page .contact-header-info img,
+.archive .contact-header-info img{
 	display: block;
 	margin: 0 auto;
 }
 
-.page .menu-page-menu-container {
+.page .menu-page-menu-container,
+.archive .menu-page-menu-container {
 	opacity: 0.8;
 }
-.page .menu-page-menu-container ul{
+.page .menu-page-menu-container ul,
+.archive .menu-page-menu-container ul{
 	display: table-cell;
 	height: 48px;
 	background-color: #000;
@@ -376,26 +443,27 @@ article{
 	vertical-align: middle;
 
 }
-.page .menu-page-menu-container li{
+.page .menu-page-menu-container li,
+.archive .menu-page-menu-container li{
 	margin: 0 15px;
 	float: left;
 }
-.page .menu-page-menu-container li:last-child{
+.page .menu-page-menu-container li:last-child,
+.archive .menu-page-menu-container li:last-child{
 	margin-right: 45px;
 }
 
 
-.page .reflected h2{
+.page .reflected img,
+.archive .reflected img{
 	position: relative;
-	font-size: 3em;
-	text-transform: uppercase;
-	color: #fff;
-
+	width: 80%;
 }
 
-.page .request-button-link{
+.page .request-button-link,
+.archive .request-button-link{
 	position: absolute;
-	bottom: 30%;
+	bottom: 29px;
 	left: 22%;
 }
 
@@ -410,6 +478,21 @@ article{
 .entry-content{
 	margin-left: 2em;
 }
+.entry-content.contact-page{
+	margin-left: 0;
+}
+
+.contact-page.entry-title{
+	margin-left: 0.4em;
+}
+
+.entry-content.contact-page .request-quote{
+	padding-top: 0.5em;
+	font-size: 2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 .entry-title{
 	text-transform: uppercase;
 	font-weight: bold;
@@ -424,21 +507,40 @@ article{
 	display: none
 }
 
-.contact-form p{
-	margin: 15px 20px;
+.contact-form p.name,
+.contact-form p.email,
+.contact-form p.phone{
+	display: block;
+	width: 32.45%;
+	text-align: left;
 	float: left;
 }
 
+.contact-form p.email{
+	margin: 0 0.5em;
+}
+.contact-form p{
+	text-align: left;
+	padding: 5px 0;
+}
+
+.contact-form span,
+.contact-form p.adress{
+	width: 100%;
+}
+
 .contact-form input{
-	width: 200px;
 	height: 32px;
+}
+.contact-form input,
+.contact-form textarea{
+	width: 100%;
 	border: solid 1px #FFF;
 }
 
 .contact-form .captcha {
 	position: relative;
-	float: none;
-	clear: both;
+	float: left;
 }
 
 .contact-form .captcha img{
@@ -446,6 +548,7 @@ article{
 	height: 32px;
 	margin: 0 15px;
 }
+
 
 .contact-form .captcha span input{
 	position: absolute;
@@ -455,7 +558,7 @@ article{
 
 .contact-form .captcha-before{
 	position: absolute;
-	bottom: 0;
+	bottom: 5px;
 	display: block;
 	width: 20px;
 	height: 32px;
@@ -464,7 +567,7 @@ article{
 .contact-form .captcha-arrow{
 	position: absolute;
 	display: block;
-	bottom: 0;
+	bottom: 5px;
 	left: 80px;
 	width: 20px;
 	height: 32px;
@@ -484,6 +587,56 @@ article{
 	background-color: #000;
 }
 
+.contact-form .submit-button{
+	width: 120px;
+	margin: 20px 0 0 0;
+	float: right;
+}
+.contact-form .submit-button input{
+	font-weight: bold;
+	text-transform: uppercase;
+	border: none;
+}
+
+.contact-info{
+	background-color: #9A0B00;
+}
+
+.contact-info p.adress{
+	width: 200px;
+	padding-left: 20px;
+}
+.contact-info p{
+	text-align: left;
+	padding: 5px 0;
+	font-weight: bold;
+}
+
+.contact-info span.field-title{
+	display: block;
+	width: 40px;
+	margin: 0 20px;
+	float: left;
+}
+
+.contact-info span.field-title,
+.contact-info span.time-for-call{
+	color: #AFAFAF;
+	font-weight: normal;
+}
+.contact-info span.time-for-call {
+	margin-left: 10px;
+}
+.contact-info p span.adress,
+.contact-info p span.time-for-call,
+.contact-info p span.fax,
+.contact-info p span.email
+{
+	float: none;
+}
+
+
+.contact-info {}
 
 /*End page header styles*/
 
