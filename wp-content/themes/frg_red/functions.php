@@ -629,8 +629,8 @@ $args = array(
 );
 $header_info = get_posts($args);
 	$header_info_fields = get_fields($header_info[0]->ID);
+	$contact_info_fields = contact_page_info();
 	if($param){
-		$contact_info_fields = get_contact_page_info();
 		echo'<div class="contact-header-info-front center-block col-lg-3 col-md-12 col-sm-12 col-xs-12">
 				<div class=""><img class="img-responsive center-block" src="'.$header_info_fields['site_logo']['url'].'"/></div>
 				<div class=""><p class="company-name">'.$header_info_fields['company_name'].'</p></div>
@@ -645,15 +645,20 @@ $header_info = get_posts($args);
 	}else{
 		$reflect = explode(' ',trim($header_info_fields['reflect_tagline']));
 		echo'<div class="contact-header-info center-block col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="col-lg-3"><img src="'.$header_info_fields['site_logo']['url'].'"/></div>
-				<div class="col-lg-6">
+				<div class="col-lg-3 block-1"><img class="img-responsive" src="'.$header_info_fields['site_logo']['url'].'"/></div>
+				<div class="col-lg-6 block-2">
 						<p class="company-name">'.$header_info_fields['company_name'].'</p>
 						<p class="product-description">'.$header_info_fields['product_description'].'</p>
 						<p class="tagline">'.$header_info_fields['tagline'].'</p>
 						<div class="reflected reflect-tagline"><img class="img-responsive center-block" src="'.$header_info_fields['reflect_tagline_image']['url'].'" alt="reflect your style"/>
 						</div>
 				</div>
-				<div class="col-lg-3 header-request-quote">
+				<div class="col-lg-3 header-request-quote block-3">
+						<div class="contacts">
+						<p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p>
+							<p class="adress">' . $contact_info_fields['adress'] . '</p>
+							<p class="email">' . $contact_info_fields['email'] . '</p>
+						</div>
 						<img class="request-quote-image" src="'.$header_info_fields['request_quote_image']['url'].'"/>
 						<a class="request-button-link btn btn-default" href="'.$header_info_fields['request_quote_button_link'].'" rel="gallery">'.$header_info_fields['request_quote_button_text'].'</a>
 				</div>
@@ -662,19 +667,21 @@ $header_info = get_posts($args);
 }
 
 function render_contact_info(){
-	$contact_info_fields = get_contact_page_info();
+	$contact_info_fields = contact_page_info();
 	echo '<div class="contact-info">
-		<div class><p class="phone-number">' . $contact_info_fields['phone_number_1'] . '</p></div>
-		<div class><p class="time-to-call">' . $contact_info_fields['time_to_call'] . '</p></div>
-		<div class><p class="phone-number">' . $contact_info_fields['phone_number_2'] . '</p></div>
-		<div class><p class="adress">' . $contact_info_fields['adress'] . '</p></div>
-		<div class><p class="email">' . $contact_info_fields['email'] . '</p></div>
+		<p class="adress"><span class="adress">' . $contact_info_fields['adress'] . '</span></p>
+			<p class="phone-number">
+				<span class="field-title">Phone:</span><span class="phone">' . $contact_info_fields['phone_number_1'] . '</span>
+				<span class="time-for-call">' . $contact_info_fields['time_for_call'] . '</span>
+			</p>
+		<p class="phone-number fax"><span class="field-title">Fax:</span><span class="fax">' . $contact_info_fields['fax'] . '</span></p>
+		<p class="email"><span class="field-title">Email:</span><span class="email">' . $contact_info_fields['email'] . '</span></p>
 	</div>';
 
 }
 
 function render_footer_info(){
-	$contact_info_fields = get_contact_page_info();
+	$contact_info_fields = contact_page_info();
 $args = array(
 	'post_title'	   => 'Footer info',
 	'category'         => '',
@@ -698,9 +705,14 @@ $footer_info = get_posts($args);
 
 }
 
+function contact_page_form(){
+
+	$contact_fields = contact_page_info();
+	echo do_shortcode($contact_fields['contact_form']);
+}
 
 
-function get_contact_page_info(){
+function contact_page_info(){
 	$args = array(
 		'post_type'        => 'page',
 	);
