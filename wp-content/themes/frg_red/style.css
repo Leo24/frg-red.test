@@ -169,8 +169,7 @@ article{
 }
 
 
-.page .request-button-link,
-.archive .request-button-link,
+#page .request-button-link,
 .page .gallery-link{
 	border: none;
 	border-radius: 0;
@@ -180,7 +179,8 @@ article{
 }
 .page .contact-header-info-front .gallery-link{
 	position: absolute;
-	bottom: 0;
+	bottom: -25px;
+	left: 0;
 	margin-left: 1em;
 	background-color: #000;
 }
@@ -244,8 +244,8 @@ article{
 }
 .menu-main-page-menu-slider-top-container li a,
 .menu-main-page-menu-top-slider-bottom-container li a,
-.page .menu-page-menu-container li a,
-.archive .menu-page-menu-container li a{
+#page .menu-page-menu-container li a,
+#page .menu-single-page-menu-container li a{
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
@@ -417,39 +417,41 @@ article{
 
 /*Page header styles*/
 
-.archive .contact-header-info,
-.page .contact-header-info {
+#page .contact-header-info {
 	/*background: url("./images/image_r46_c23.png") no-repeat;*/
 	background: linear-gradient(to top, #DC0F00, #9A0B00) no-repeat;
 	background-size: 100% 44%;
 	background-position: bottom;
 }
-.page .contact-header-info img,
-.archive .contact-header-info img{
+#page .contact-header-info img{
 	display: block;
 	margin: 0 auto;
 }
 
-.page .menu-page-menu-container,
-.archive .menu-page-menu-container {
+#page .menu-page-menu-container,
+#page .menu-single-page-menu-container{
 	opacity: 0.8;
 }
-.page .menu-page-menu-container ul,
-.archive .menu-page-menu-container ul{
+#page .menu-page-menu-container ul,
+#page .menu-single-page-menu-container ul{
 	display: table-cell;
+	width: 96%;
 	height: 48px;
 	background-color: #000;
 	list-style: none;
 	vertical-align: middle;
 
 }
-.page .menu-page-menu-container li,
-.archive .menu-page-menu-container li{
+#page .menu-page-menu-container li{
 	margin: 0 15px;
 	float: left;
 }
-.page .menu-page-menu-container li:last-child,
-.archive .menu-page-menu-container li:last-child{
+#page .menu-single-page-menu-container li{
+	margin: 0 20px;
+	float: left;
+}
+#page .menu-page-menu-container li:last-child,
+#page .menu-single-page-menu-container li:last-child{
 	margin-right: 45px;
 }
 
@@ -460,8 +462,7 @@ article{
 	width: 80%;
 }
 
-.page .request-button-link,
-.archive .request-button-link{
+#page .request-button-link{
 	position: absolute;
 	bottom: 29px;
 	left: 22%;
