@@ -34,13 +34,7 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site container">
 		<header id="masthead" class="site-header row" role="banner">
-<!--			<a class="home-link" href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" title="--><?php //echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?><!--" rel="home">-->
-<!--				<h1 class="site-title">--><?php //bloginfo( 'name' ); ?><!--</h1>-->
-<!--				<h2 class="site-description">--><?php //bloginfo( 'description' ); ?><!--</h2>-->
-<!--			</a>-->
-
 			<?php get_header_info(is_front_page());?>
-
 			<?php
 			if(is_front_page()):
 				if ( is_active_sidebar( 'menus_slider_widget' ) ) : ?>
@@ -50,17 +44,20 @@
 				<?php endif; ?>
 <!--			--><?php //endif; ?>
 
-			<?php else:
-//			if(is_front_page() == false):
+			<?php elseif(is_single() == false):
 				?>
 			<div id="navbar" class="">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
-<!--					<button class="menu-toggle">--><?php //_e( 'Menu', 'frg_red' ); ?><!--</button>-->
-<!--					<a class="screen-reader-text skip-link" href="#content" title="--><?php //esc_attr_e( 'Skip to content', 'frg_red' ); ?><!--">--><?php //_e( 'Skip to content', 'frg_red' ); ?><!--</a>-->
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
-<!--					--><?php //get_search_form(); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'menu' => 'Page Menu'  ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
+
+			<?php else:?>
+				<div id="navbar" class="">
+					<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'menu' => 'Single Page Menu' ) ); ?>
+					</nav><!-- #site-navigation -->
+				</div><!-- #navbar -->
 			<?php endif;?>
 		</header><!-- #masthead -->
 

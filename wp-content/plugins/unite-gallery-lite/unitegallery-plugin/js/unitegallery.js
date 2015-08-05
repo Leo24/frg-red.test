@@ -14223,7 +14223,7 @@ function UGThumbsGrid(){
 		if(parentContainer)
 			objParent = parentContainer;
 		
-		objParent.append("<div class='ug-thumbs-grid'><div class='ug-thumbs-grid-inner'></div></div>");		 
+		objParent.append("<div class='col-lg-5 col-md-5 col-sm-6 col-xs-6 ug-thumbs-grid'><div class='ug-thumbs-grid-inner'></div></div>");
 		g_objGrid = objParent.children(".ug-thumbs-grid");
 		g_objInner = g_objGrid.children(".ug-thumbs-grid-inner");		
 		

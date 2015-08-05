@@ -16,7 +16,7 @@ class UniteGalleryItems extends UniteElementsBaseUG{
 		parent::__construct();
 		$this->operations = new UGOperations();
 	}
-	
+
 	
 	/**
 	 * 
@@ -135,7 +135,7 @@ class UniteGalleryItems extends UniteElementsBaseUG{
 			if($isTilesType && $counter >= 20)
 				break;
 			else
-				if($isTilesType == false && $counter >= 12)
+				if($isTilesType == false && $counter >= 500)
 				break;
 			
 			$counter++;
