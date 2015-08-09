@@ -139,10 +139,30 @@ article{
 	color: #FFF;
 	font-size: 1em;
 }
-.contact-header-info .company-name,
-.contact-header-info-front .company-name{
+.contact-header-info-front .adress{
+	font-size: 0.9em;
+}
+
+
+
+.contact-header-info .company-name{
 	font-size: 2.5em;
 	font-weight: bold;
+}
+.contact-header-info-front .company-name{
+	font-size: 1.5em;
+}
+.contact-header-info-front .product-description,
+.contact-header-info-front .company-name,
+.contact-header-info-front .tagline{
+	color: #000;
+	font-weight: bold;
+}
+
+
+.contact-header-info-front .phone-number{
+	background: url("images/phone-ico.png") no-repeat;
+	background-position: 65px 0;
 }
 
 .contact-header-info .contacts{
@@ -157,7 +177,7 @@ article{
 }
 .contact-header-info .contacts .phone-number{
 	background: url("images/phone-ico.png") no-repeat;
-	background-position: 27% 0;
+	background-position: 65px 0;
 	font-size: 1.2em;
 	font-weight: bold;
 }
@@ -296,6 +316,24 @@ article{
 		width: 30%;
 	}
 }
+@media (max-width: 1198px) {
+
+	#page .contact-header-info .block-1 img{
+		width: 70%;
+		margin-bottom: 50px;
+	}
+	#page .contact-header-info.center-block {
+		background-size: 100% 37%;
+	}
+	#page .contact-header-info .contacts .phone-number {
+		background-position: 35% 0;
+	}
+
+	#page .request-button-link.btn {
+		left: 38%;
+	}
+}
+
 @media (max-width: 990px) {
 	#home-bottom-widget .bottom-news-block {
 		clear: both;
@@ -318,6 +356,24 @@ article{
 	.page .request-button-link.btn,
 	.archive .request-button-link.btn {
 		left: 42%;
+	}
+}
+
+@media (max-width: 630px) {
+
+	#page .contact-header-info .block-1 img{
+		width: 70%;
+		margin-bottom: 50px;
+	}
+	#page .contact-header-info.center-block {
+		background-size: 100% 41.8%;
+	}
+	#page .contact-header-info .contacts .phone-number {
+		background-position: 35% 0;
+	}
+
+	#page .request-button-link.btn {
+		left: 33%;
 	}
 }
 
